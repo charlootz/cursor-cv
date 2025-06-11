@@ -1,145 +1,112 @@
-# Cursor CV - AI-Powered Resume Optimization System
+# cursor-cv – a resume feedback tool built for cursor
 
-A systematic approach to resume optimization using AI assistants and version control. This repository provides templates and workflows for getting high-quality resume feedback and tracking improvements over time.
+a repeatable way to tighten your resume with help from ai.  
+keep every edit, measure what works, and hit send with confidence.
 
-## What is Cursor CV?
+> **tl;dr**: drop your resume in here, paste the job postings, create a conversation in cursor, act on the feedback, commit the change. repeat.
 
-Cursor CV is a structured system that helps job seekers:
-- Get detailed, objective feedback on their resumes from AI assistants
-- Track resume versions and improvements over time
-- Tailor resumes to specific job descriptions
-- Maintain a log of insights and learnings throughout the job search
+---
 
-## Features
+## why bother?
 
-- **Structured Review Templates**: Comprehensive templates for analyzing resume-job fit
-- **Version Control**: Track how your resume evolves with each application
-- **AI-Optimized Instructions**: Clear guidelines for AI assistants to provide actionable feedback
-- **Implementation Tracking**: Keep track of which suggestions you've implemented
-- **Discovery Logging**: Document insights about your career narrative
+* **fresh eyes on demand** – let an ai assistant point out blind spots any time, in minutes  
+* **version history** – every tweak lives in git, so you can roll back or compare  
+* **job-aware** – tailor one resume per role instead of flooding a single doc with keywords  
+* **learning loop** – log what you tried and what moved the needle for next time
 
-## Quick Start
+---
 
-1. **Clone this repository**
+## repo tour
+
+```
+cursor-cv/
+├── README.md                    # you are here
+├── instructions.md              # the prompt that makes the magic happen
+├── about-candidate-log.md       # your career story + discoveries
+├── resume-template.md           # starter template (optional)
+├── resume.md                    # your actual resume
+├── example/                     # see it in action with sarah chen
+├── feedback/
+│   ├── template.md             # review structure
+│   ├── implementation.md       # track what you did
+│   └── reviews/                # ai feedback goes here
+├── job-descriptions/           # target roles (key to specific feedback!)
+└── resume-versions/            # your resume evolution
+    └── v1-baseline-[date].md
+```
+
+---
+
+## quick start
+
+1. **clone**
    ```bash
    git clone https://github.com/yourusername/cursor-cv.git
    cd cursor-cv
    ```
 
-2. **Set up your personal information**
-   - Copy `resume-template.md` to `resume.md` and fill in your information (or just paste your resume as .md)
-   - Copy `about-candidate-log.md` and rename it with your name
+2. **drop your stuff in**
+   - copy `resume-template.md` → `resume.md` (or just paste your .md resume)
+   - add job posts inside `job-descriptions/[company-role].md` (this is crucial!)
 
-3. **Add a job description**
-   - Create a new file in `job-descriptions/` with the role you're applying for
+3. **fire off the prompt**
+   - open `instructions.md`, follow the steps in your ai tool of choice
+   - the ai will analyze your resume against the specific job description
+   - save the ai's response to `feedback/reviews/[role]-[date].md`
 
-4. **Get AI feedback**
-   - Use the `instructions.md` file with your preferred AI assistant (Claude, ChatGPT, etc.)
-   - The AI will create a detailed review using the templates provided
+4. **ship improvements**
+   - tick items in `feedback/implementation.md`
+   - commit changes with a msg like `feat: quantify impact at startup (solutions-eng role)`
+   - copy `resume.md` to `resume-versions/` before big edits
 
-5. **Implement changes**
-   - Use `feedback/implementation.md` to track which suggestions you implement
-   - Save new versions in `resume-versions/` with descriptive names
-
-## Repository Structure
-
-```
-cursor-cv/
-├── README.md                    # This file
-├── instructions.md              # Instructions for AI assistants
-├── about-candidate-log.md       # Template for tracking insights
-├── resume-template.md           # Starting resume template
-├── resume.md                    # Your current resume (create from template)
-├── feedback/
-│   ├── template.md             # Review template
-│   ├── implementation.md       # Implementation tracking
-│   └── reviews/                # Store completed reviews here
-├── job-descriptions/           # Target job descriptions
-│   └── [company-role].md
-└── resume-versions/            # Version history
-    ├── README.md              # Version control best practices
-    └── v1-baseline-[date].md
-```
-
-## How It Works
-
-### 1. Prepare Your Materials
-- Add your current resume
-- Add job descriptions you're targeting
-- Review the templates to understand the analysis structure
-
-### 2. Run AI Analysis
-The AI assistant will:
-- Score your resume across multiple dimensions
-- Identify keyword matches and gaps
-- Suggest specific improvements
-- Highlight strengths to emphasize
-
-### 3. Implement Feedback
-- Review suggestions systematically
-- Update your resume based on priorities
-- Save versions before major changes
-- Track what changes had the most impact
-
-### 4. Iterate and Improve
-- Run new analyses for each application
-- Build a library of optimized versions
-- Learn what works for different role types
-- Refine your career narrative
-
-## Best Practices
-
-### For Resume Versions
-- Always save a version before major changes
-- Use descriptive filenames: `v2-product-manager-focus-2024-01-15.md`
-- Document why you made specific changes
-- Keep a "master" version with all experiences
-
-### For AI Feedback
-- Be specific about the role and company
-- Include the full job description
-- Ask for examples when suggestions are vague
-- Get multiple perspectives on major changes
-
-### For Implementation
-- Prioritize changes that address "High Priority Gaps"
-- Make one type of change at a time to measure impact
-- Keep technical accuracy when adding keywords
-- Maintain authenticity while optimizing
-
-## Tips for Success
-
-1. **Keyword Optimization**: The system helps identify missing keywords without keyword stuffing
-2. **Quantification**: AI will suggest where to add metrics and specific achievements
-3. **Narrative Building**: Use the discovery log to refine your career story
-4. **Version Testing**: A/B test different versions for similar roles
-
-## Contributing
-
-We welcome contributions! Please see our contributing guidelines (coming soon) for:
-- Additional templates for different industries
-- Improved AI prompting strategies
-- Success stories and case studies
-- Integration tools and scripts
-
-## Privacy Note
-
-This repository is designed to work with your personal data locally. Never commit sensitive information like:
-- Phone numbers
-- Email addresses
-- Physical addresses
-- References' contact information
-
-Use the template placeholders and keep personal data in `.gitignore`'d files.
-
-## License
-
-MIT License - See LICENSE file for details
-
-## Acknowledgments
-
-Created to help job seekers leverage AI tools effectively while maintaining control over their career narratives.
+5. **loop**  
+   rinse & repeat for every application. watch your resume level-up over time.
 
 ---
 
-**Remember**: AI feedback is a tool, not a replacement for human judgment. Always review suggestions critically and maintain your authentic voice.
+## the job-descriptions magic
+
+dropping job descriptions in `job-descriptions/` unlocks:
+- **keyword gap analysis** – see exactly what's missing for this role
+- **targeted rewrites** – get specific bullet point suggestions that match the job
+- **follow-up questions** – ai asks clarifying questions to help you nail the details
+- **priority fixes** – know what to change first based on the specific role
+
+example flow:
+```
+you: "review my resume against the openai pm role"
+ai: "you're missing search/IR experience. do you have any projects with search?"
+you: "actually yes, i built search for our api docs"
+ai: "perfect! here's how to reframe that experience..."
+```
+
+---
+
+## best practices
+
+* **name versions well**  
+  `v3-data-focus-2024-01-20.md` beats `final_FINAL.md`
+
+* **one change at a time**  
+  easier to see what works
+
+* **ask specific questions**  
+  the sharper the prompt, the sharper the feedback
+
+* **add multiple job descriptions**  
+  see patterns across similar roles
+
+---
+
+## example
+
+check out `example/` to see sarah chen go from generic pm resume to openai-ready in one review cycle:
+
+
+## license
+
+MIT
+
+---
+
+**remember**: ai is your helper, not your ghostwriter. keep your voice, own your story, and hit send.
