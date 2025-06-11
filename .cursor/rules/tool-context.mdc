@@ -1,0 +1,7 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+every new conversation should begin with you review the contents of [instructions.md](mdc:instructions.md).
+this directory is tool based in the Cursor IDE that helps people improve their resumes
