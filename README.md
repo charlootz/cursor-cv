@@ -27,7 +27,7 @@ Cursor CV is a structured system that helps job seekers:
    ```
 
 2. **Set up your personal information**
-   - Copy `resume-template.md` to `resume.md` and fill in your information
+   - Copy `resume-template.md` to `resume.md` and fill in your information (or just paste your resume as .md)
    - Copy `about-candidate-log.md` and rename it with your name
 
 3. **Add a job description**
