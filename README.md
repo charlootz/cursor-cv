@@ -5,6 +5,8 @@ keep every edit, measure what works, and hit send with confidence.
 
 > **tl;dr**: drop your resume in here, paste the job postings, create a conversation in cursor, act on the feedback, commit the change. repeat.
 
+<img width="1920" alt="image" src="https://github.com/user-attachments/assets/903542c2-50b1-428c-b704-a6194d2e0120" />
+
 ---
 
 ## why bother?
